@@ -1,55 +1,52 @@
-
 package galaxia.champs.game;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
-public class Nave {
+public class nave {
 
 	private int x;
 	private int y;
 	private int dx;
 	private int dy;
-	private int pos;
+	private int posicao;
 	private Image imagem;
-	private boolean isVisivel;
+	private boolean inimigo_visivel;
 
-	private static final int LARGURA = 52;
-	private static final int ALTURA = 62;
-	/*
-	 * ============================================METODO NAVE
-	 */
-	public Nave() {
+	private static final int largura = 52;
+	private static final int altura = 62;
+/*metodo da nave*/
+	public nave() {
 		ImageIcon referencia = new ImageIcon("res/player/nave.png");
 		imagem = referencia.getImage();
-		pos = 0;
+		posicao = 0;
 
-		// DEFINE POSIÇÃO INICIAL NO JOGO
-		x = 330; // HORIZONTAL
-		y = 600; // VERTICAL
+/*defini posicaoicao inicial da nave*/
+		x = 330; 
+		y = 600; 
 
-		// DEFINE NAVE VISIVEL
-		isVisivel = true;
+/*mostra a nave*/
+		inimigo_visivel = true;
 	}
 
 	public void mover() {
 		x += dx;
 		y += dy;
 
-		// TRATAMENTO PARA NÃO SAIR DA TELA
-		if (this.x < 1) {// MIN HORIZONTAL (INICIA DA ESQUERDA)
+/*permanecer na tela*/
+		if (this.x < 1) { /*inicia na esquerda*/
 			this.x = 1;
 		}
-		if (this.x > 560) {// MAX HORIZONTAL (CRESCE PARA A DIREITA)
+		if (this.x > 560) { /*aumenta para a direita*/
 			this.x = 560;
 
 		}
 
-		if (this.y < 30) {// MIN VERTIAL (INICA DE CIMA)
+		if (this.y < 30) { /*inicia em cima*/
 			this.y = 30;
 		}
 
-		if (this.y > 480) {// MAX VERTICAL(CRESCE PARA BAIXO)
+		if (this.y > 480) { /*cresce para baixo*/
 			this.y = 480;
 		}
 
@@ -76,27 +73,27 @@ public class Nave {
 	}
 
 	public int getPos() {
-		return pos;
+		return posicao;
 	}
 
 	public void setPos(int Pos) {
-		pos = Pos;
+		posicao = Pos;
 	}
 
 	public int getAlt() {
-		return ALTURA;
+		return altura;
 	}
 
 	public int getLar() {
-		return LARGURA;
+		return largura;
 	}
 
-	public boolean isVisivel() {
-		return isVisivel;
+	public boolean inimigo_visivel() {
+		return inimigo_visivel;
 	}
 
 	public void setVisivel(boolean visivel) {
-		isVisivel = visivel;
+		inimigo_visivel = visivel;
 	}
 
 }

@@ -7,21 +7,21 @@ public class Tiro1 {
 
 	private int x, y;
 	private Image imagem;
-	private boolean isVisivel;
-	private static final int VELOCIDADE = 2;
-	private static final int ALTURA = 50;
-	private static final int LARGURA = 20;
+	private boolean inimigo_visivel;
+	private static final int velocidade = 2;
+	private static final int altura = 50;
+	private static final int largura = 20;
 	
 	public Tiro1(int x, int y) {
 		this.x = x;
 		this.y = y;
 		ImageIcon referencia = new ImageIcon("res/armas/laiser.png");
 		imagem = referencia.getImage();
-		isVisivel = true;
+		inimigo_visivel = true;
 	}
 
 	public void mover() {
-		y -= VELOCIDADE;
+		y -= velocidade;
 	}
 
 	public Image getImagem() {
@@ -37,19 +37,19 @@ public class Tiro1 {
 	}
 
 	public int getAlt() {
-		return ALTURA;
+		return altura;
 	}
 
 	public int getLar() {
-		return LARGURA;
+		return largura;
 	}
 
-	public boolean isVisivel() {
-		return isVisivel;
+	public boolean inimigo_visivel() {
+		return inimigo_visivel;
 	}
 
 	public void setVisivel(boolean visivel) {
-		isVisivel = visivel;
+		inimigo_visivel = visivel;
 	}
 
 }
